@@ -13,8 +13,8 @@ int main(int argc, char **argv)
 	while(ros::ok())
 	{
 		turtle_diff_drive::wheel_velocity msg;
-		msg.omega_l=10;
-		msg.omega_r=10;
+		msg.omega_l=12;
+		msg.omega_r=8;
 		
 		pub.publish(msg);
 		ROS_INFO("Publishing: omega_left=%.2f, omega_right=%.2f", msg.omega_l, 			msg.omega_r); 

@@ -140,7 +140,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 #add_executable(${PROJECT_NAME}_node src/turtle_diff_drive_node.cpp)
 add_executable(wheel_velocity_pub src/wheel_velocity_pub.cpp)
-
+add_executable(fk_wheels_to_twist src/fk_wheels_to_twist.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -157,6 +157,8 @@ add_executable(wheel_velocity_pub src/wheel_velocity_pub.cpp)
  #)
 add_dependencies(wheel_velocity_pub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(wheel_velocity_pub ${catkin_LIBRARIES})
+add_dependencies(fk_wheels_to_twist  ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(fk_wheels_to_twist ${catkin_LIBRARIES})
 
 #############
 ## Install ##
